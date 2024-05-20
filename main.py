@@ -30,6 +30,7 @@ def take_action():
         if status == 'active':
             mailer.send_mail('URGENT: Appointment Open!', 'New Appointment: https://service2.diplo.de/rktermin/extern/choose_realmList.do?locationCode=isla&request_locale=en \n Cancel Old Appointment: https://mail.google.com/mail/u/0/#search/diplo.de/FMfcgzGqRZXPdJGVVpMQhfsGWkVbcWxC')
         elif status == 'error':
+            pass
             # mailer.send_mail('ERROR: Something went wrong!', 'Something went wrong on the server. Kindly check!')
     elif datetime.datetime.now() > LAST_EMAIL + datetime.timedelta(minutes=int(os.environ.get('EMAIL_AFTER_MIN'))):
         content_list = []
